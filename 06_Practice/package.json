@@ -7,9 +7,9 @@
     "jest": "^27.4.5"
   },
   "scripts": {
-    "test":"jest"
-  }, 
-  "jest": { 
-    "collectCoverage": true 
+    "test": "jest"
+  },
+  "jest": {
+    "collectCoverage": true
   }
 }

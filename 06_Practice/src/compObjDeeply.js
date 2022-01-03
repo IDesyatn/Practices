@@ -1,3 +1,5 @@
+//2.Напишите функцию, которая делает глубокое сравнение объектов.
+
 module.exports = compObjDeeply;
 
 function compObjDeeply(obj1, obj2) {

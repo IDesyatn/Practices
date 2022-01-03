@@ -27,5 +27,16 @@ describe('compObjSuperficial', () => {
 
      test('Deeply objects', () => {
         expect(compObjSuperficial({ a:1, b:{c:1} }, { a:1, b:{c:1} })).toEqual({ a:1 });
+     });
+    
+    test('Keys are symbols and they are same', () => {
+        let b = Symbol('b');
+        expect(compObjSuperficial({ a: 1, [b]: 3 }, { a: 1, [b]: 3 })).toEqual({ a: 1, [b]: 3 });
+    });
+
+    test('Keys are symbols and they are not same', () => {
+        let b = Symbol('b');
+        let c = Symbol('c');
+        expect(compObjSuperficial({ a: 1, [b]: 3 }, { a: 1, [c]: 3 })).toEqual({a: 1});
     });
 })
