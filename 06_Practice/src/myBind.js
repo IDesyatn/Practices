@@ -1,14 +1,13 @@
-function sum (a, b) {
-  return sum + a + b;
-}
+module.exports = myBind;
 
-function myBind() {
-    if(typeof fn !== 'function'){
-        return undefined;
+function myBind(fn, cont) {
+    if(typeof fn !== 'function'|| !fn || !cont){
+        return 'Incorrect input data';
     }
-    let bindArgs = [].slice.call(arguments, 2);
+
+    let bindArg = [].slice.call(arguments, 2);
     return function() {
-        let fnArgs = [].slice.call(arguments);
-        return fn.apply(context, bindArgs.concat(fnArgs));
-    };
+        let fnArg = [].slice.call(arguments);
+        return fn.apply(cont, bindArg.concat(fnArg));
+    }
 }
