@@ -1,0 +1,65 @@
+body {
+  background-color: rgb(56, 56, 56);
+  font-family: Andale Mono, monospace;
+}
+
+.calendar {
+  width: max-content;
+  margin: 10% auto;
+  text-align: center;
+  background-color: rgb(37, 194, 160);
+  .calendar__table {
+    border-collapse: collapse;
+    border-spacing: 0px;
+    margin: 0 auto;
+    .calendar__table__name {
+      font-size: 30px;
+    }
+    .calendar__table__name,
+    .calendar__table__daysOfWeek {
+      color: white;
+    }
+  }
+}
+
+.lastNextMonth {
+  background-color: rgb(206, 206, 206);
+  color: grey;
+}
+
+.currentMonth {
+  padding: 0px 0px;
+  .currentMonth__input {
+    display: none;
+  }
+  .currentMonth__label {
+    background-color: white;
+    cursor: pointer;
+    display: block;
+    text-align: center;
+    line-height: 20px;
+    padding: 8px 12px;
+
+    user-select: none;
+  }
+
+  .currentMonth__label.holiday__label {
+    background: rgb(241, 125, 135);
+    color: white;
+  }
+
+  .currentMonth__label:hover {
+    background: plum;
+    color: white;
+    transition: 0.3s;
+  }
+
+  .currentMonth__label.weekend:hover {
+    background: rgb(240, 225, 20);
+  }
+  .currentMonth__input:checked + .currentMonth__label {
+    background: rgb(182, 15, 182);
+    color: white;
+    transition: 0.3s;
+  }
+}
